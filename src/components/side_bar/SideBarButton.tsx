@@ -1,6 +1,5 @@
 import React, { ReactElement, useState } from "react";
 import "./SidebarButton.css";
-import { color } from "framer-motion";
 
 function SidebarButton({
   bootstrapIcon: icon,
@@ -9,19 +8,55 @@ function SidebarButton({
 }) {
   
   const [isHovered, setIsHovered] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
+
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
+  const handlePress = () => {
+    setIsSelected(!isSelected);
+
+    const sideborder = document.querySelector('.nihongo-sensei-sidebar-button-sideborder');
+    const active = document.querySelector('.nihongo-sensei-sidebar-button-sideborder-active');
+    const deactive = document.querySelector('.nihongo-sensei-sidebar-button-sideborder-deactive');
+
+    if(sideborder && active) {
+      sideborder.classList.remove('nihongo-sensei-sidebar-button-sideborder-active');
+      sideborder.classList.add('nihongo-sensei-sidebar-button-sideborder-deactive');
+    }
+
+    if(sideborder && deactive) {
+      sideborder.classList.remove('nihongo-sensei-sidebar-button-sideborder-deactive');
+      sideborder.classList.add('nihongo-sensei-sidebar-button-sideborder-active');
+    }
+
+  };
+  
+
+  const defualt_colour = "gray";
+  const hover_colour = "darkgray";
+  const selected_colour = "darkgray";
+
+  let button_colour = defualt_colour;
+
+  if(isHovered) {
+    button_colour = hover_colour;
+  }
+
+  if(isSelected) {
+    button_colour = selected_colour;
+  }
+
   const iconStyle = {
     height: "75%",
     width: "75%",
-    color: isHovered ? "darkgray" : "gray",
+    color: button_colour,
   };
 
   return (
@@ -29,6 +64,7 @@ function SidebarButton({
       className="nihongo-sensei-sidebar-button-container"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onMouseDown={handlePress}
     >
       <div className="nihongo-sensei-sidebar-button-sideborder" />
       <div className="nihongo-sensei-sidebar-button-icon-container">

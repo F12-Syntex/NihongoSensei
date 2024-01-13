@@ -13,19 +13,28 @@
 .nihongo-sensei-sidebar-button-sideborder {
   width: 10px;
   height: 100%;
-  background-color: gray;
-  border-radius: 0px 5px 5px 0px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 10px 10px 0px;
 }
+
+.nihongo-sensei-sidebar-button-container:hover
+  .nihongo-sensei-sidebar-button-sideborder-deactive {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s; 
+}
+
+.nihongo-sensei-sidebar-button-sideborder {
+  transition: background-color 0.5s; 
+}
+
+.nihongo-sensei-sidebar-button-sideborder-active{
+  background-color: white;
+}
+
 
 .nihongo-sensei-sidebar-button-container:hover {
   cursor: pointer;
 }
-.nihongo-sensei-sidebar-button-container:hover
-  .nihongo-sensei-sidebar-button-sideborder {
-  background-color: darkgray;
-  transition: background-color 1s; 
-}
-
 .nihongo-sensei-sidebar-button-icon-container {
   margin-left: 10px;
   width: 50px;
