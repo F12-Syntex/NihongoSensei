@@ -36,10 +36,8 @@
     "deleteAppDataOnUninstall": false
   },
   "publish": {
-    "provider": "github",
-    "owner": "F12-Syntex",
-    "repo": "NihongoSensei",
-    "private": false,
-    "releaseType": "release"
+    "provider": "generic",
+    "channel": "latest",
+    "url": "https://github.com/F12-Syntex/NihongoSensei/releases/latest/download/",
   }
 }
