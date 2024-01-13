@@ -2,9 +2,13 @@ import React, { ReactElement, useState } from "react";
 import "./SidebarButton.css";
 
 function SidebarButton({
-  bootstrapIcon: icon,
+  bootstrapIcon_deactive: deactiveIcon,
+  bootstrapIcon_active: activeIcon,
+  targetPage: targetPage
 }: {
-  bootstrapIcon: ReactElement;
+  bootstrapIcon_deactive: ReactElement;
+  bootstrapIcon_active: ReactElement;
+  targetPage: ReactElement;
 }) {
   
   const [isHovered, setIsHovered] = useState(false);
@@ -20,6 +24,11 @@ function SidebarButton({
   };
 
   const handlePress = () => {
+
+    if(isSelected){
+      return;
+    }
+
     setIsSelected(!isSelected);
 
     const sideborder = document.querySelector('.nihongo-sensei-sidebar-button-sideborder');
@@ -35,6 +44,8 @@ function SidebarButton({
       sideborder.classList.remove('nihongo-sensei-sidebar-button-sideborder-deactive');
       sideborder.classList.add('nihongo-sensei-sidebar-button-sideborder-active');
     }
+
+    //render the target page onto the main page
 
   };
   
@@ -59,6 +70,8 @@ function SidebarButton({
     color: button_colour,
   };
 
+  const icon = isSelected ? activeIcon : deactiveIcon;
+
   return (
     <div
       className="nihongo-sensei-sidebar-button-container"
@@ -66,7 +79,7 @@ function SidebarButton({
       onMouseLeave={handleMouseLeave}
       onMouseDown={handlePress}
     >
-      <div className="nihongo-sensei-sidebar-button-sideborder" />
+    <div className="nihongo-sensei-sidebar-button-sideborder nihongo-sensei-sidebar-button-sideborder-deactive" />
       <div className="nihongo-sensei-sidebar-button-icon-container">
         {React.cloneElement(icon, {
           style: iconStyle,
