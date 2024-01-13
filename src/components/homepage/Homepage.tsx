@@ -1,7 +1,7 @@
 import "./Homepage.css";
 
 function Homepage() {
-  return (
+return (
     <div className="nihongo-sensei-container">
     </div>
   );
