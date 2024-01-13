@@ -3,6 +3,7 @@ import { release } from 'node:os'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { update } from './update'
+import { screen } from 'electron'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -46,9 +47,13 @@ const url = process.env.VITE_DEV_SERVER_URL
 const indexHtml = join(process.env.DIST, 'index.html')
 
 async function createWindow() {
+  const { width: screenWidth, height: screenHeight } = screen.getPrimaryDisplay().workAreaSize;
+
   win = new BrowserWindow({
-    title: 'Main window',
-    icon: join(process.env.VITE_PUBLIC, 'favicon.ico'),
+    title: 'Nihongo Sensei',
+    icon: join(process.env.VITE_PUBLIC, 'nihongo_sensei_icon.ico'),
+    width: Math.floor(screenWidth * 0.515),
+    height: Math.floor(screenHeight * 0.617),
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
@@ -63,7 +68,7 @@ async function createWindow() {
   if (url) { // electron-vite-vue#298
     win.loadURL(url)
     // Open devTool if the app is not packaged
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
   } else {
     win.loadFile(indexHtml)
   }
@@ -78,6 +83,16 @@ async function createWindow() {
     if (url.startsWith('https:')) shell.openExternal(url)
     return { action: 'deny' }
   })
+
+  //shortcut to open dev tools to be ctr + shift + i
+  win.webContents.on('before-input-event', (event, input) => {
+    if (input.key.toLowerCase() === 'i' && input.control && input.shift) {
+      win?.webContents.toggleDevTools()
+    }
+  })
+
+  //disable the menubar from showing
+  win.setMenuBarVisibility(false)
 
   // Apply electron-updater
   update(win)
