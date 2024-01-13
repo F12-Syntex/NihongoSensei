@@ -16,6 +16,26 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  position: relative; 
+}
+
+/* Add a ::before pseudo-element to the :root element */
+:root::before {
+  content: "";
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Make sure the pseudo-element is behind all other elements */
+  filter: brightness(10%);
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: -webkit-optimize-contrast; /* Safari/Chrome */
 }
 
 body {
@@ -40,4 +60,21 @@ body {
   code {
     background-color: #f9f9f9;
   }
+}
+
+.nihongo-sensei-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nihongo-sensei-container > :first-child {
+  flex: 0 0 6%;
+}
+.nihongo-sensei-container > :last-child {
+  flex: 1;
 }

@@ -52,8 +52,8 @@ async function createWindow() {
   win = new BrowserWindow({
     title: 'Nihongo Sensei',
     icon: join(process.env.VITE_PUBLIC, 'nihongo_sensei_icon.ico'),
-    width: Math.floor(screenWidth * 0.515),
-    height: Math.floor(screenHeight * 0.617),
+    width: Math.floor(screenWidth * 0.6),
+    height: Math.floor(screenHeight * 0.7),
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production

@@ -1,9 +1,14 @@
-.nihongo-sensei-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(20, 20, 20);
+.nihongo-sensei-homepage-container {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 elements in each row */
   align-items: center;
   justify-items: center;
+}
+
+.nihongo-activity-card-container{
+  width: 90%;
+  height: 80%;
+  background-color: red;
 }
