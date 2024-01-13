@@ -20,7 +20,9 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "electron-updater": "^6.1.7"
+    "@nextui-org/react": "^2.2.9",
+    "electron-updater": "^6.1.7",
+    "framer-motion": "^10.18.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",

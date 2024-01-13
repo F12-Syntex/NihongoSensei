@@ -1,10 +1,10 @@
+import Card from "../ui-components/card/Card";
 import "./Homepage.css";
-import Update from "../update";
 
 function Homepage() {
-return (
+  return (
     <div className="nihongo-sensei-container">
-      <Update />
+      <Card activity="testing" logo="path_to_your_logo.png" />
     </div>
   );
 }

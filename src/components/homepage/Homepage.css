@@ -1,5 +1,9 @@
-.nihongo-sensei-container{
+.nihongo-sensei-container {
   width: 100vw;
   height: 100vh;
   background-color: rgba(20, 20, 20);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 elements in each row */
+  align-items: center;
+  justify-items: center;
 }
