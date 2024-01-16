@@ -18,7 +18,7 @@
 }
 
 .nihongo-sensei-sidebar-button-container:hover
-  .nihongo-sensei-sidebar-button-sideborder-deactive {
+  .nihongo-sensei-sidebar-button-deactive {
   background-color: rgba(255, 255, 255, 0.3);
   transition: background-color 0.5s; 
 }
@@ -26,11 +26,6 @@
 .nihongo-sensei-sidebar-button-sideborder {
   transition: background-color 0.5s; 
 }
-
-.nihongo-sensei-sidebar-button-sideborder-active{
-  background-color: white;
-}
-
 
 .nihongo-sensei-sidebar-button-container:hover {
   cursor: pointer;
