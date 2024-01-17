@@ -8,13 +8,16 @@
   height: 60px;
 
   font-size: 10px;
+
+  margin-bottom: 10px;
 }
 
 .nihongo-sensei-sidebar-button-sideborder {
-  width: 15px;
+  width: 10px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0px 10px 10px 0px;
+  transition: background-color 0.5s; 
 }
 
 .nihongo-sensei-sidebar-button-container:hover
@@ -23,13 +26,29 @@
   transition: background-color 0.5s; 
 }
 
-.nihongo-sensei-sidebar-button-sideborder {
+.nihongo-sensei-sidebar-button-active {
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s; 
+}
+.nihongo-sensei-sidebar-button-sideborder-active{
+  background-color: darkgray;
+  width: 10px;
+  height: 100%;
+  border-radius: 0px 15px 15px 0px;
+  transition: background-color 0.5s, transform 0.5s; 
+  transform: scale(1.05);
+}
+
+.nihongo-sensei-sidebar-button-container:hover .nihongo-sensei-sidebar-button-sideborder {
+  background-color: rgba(255, 255, 255, 0.3);
   transition: background-color 0.5s; 
 }
 
-.nihongo-sensei-sidebar-button-container:hover {
+.nihongo-sensei-sidebar-button-container:hover{
   cursor: pointer;
 }
+
+
 .nihongo-sensei-sidebar-button-icon-container {
   margin-left: 10px;
   width: 50px;

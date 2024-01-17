@@ -10,7 +10,9 @@ import Sidebar from "./components/side_bar/Sidebar";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <div className="nihongo-sensei-container">
-      <Sidebar />
+      <div className="nihongo-sensei-container-sidebar">
+        <Sidebar />
+      </div>
       <Homepage />
     </div>
   </React.StrictMode>
