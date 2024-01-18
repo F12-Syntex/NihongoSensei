@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import SidebarButton from "./SideBarButton";
-import Sensei from "../senseiAi/Sensei";
-import SidebarButtonsHandler, { SidebarButtonInfo } from "./SideBarButtonsHandler"; 
-import "./Sidebar.css";
-import { Android, Android2, Apple, ArrowLeftRight, FilePlay, FilePlayFill } from "react-bootstrap-icons";
-import Homepage from "../homepage/Homepage";
+import { useEffect, useState } from "react";
+import { FilePlay, FilePlayFill, HouseDoor, HouseDoorFill, Pencil, PencilFill, PencilSquare } from "react-bootstrap-icons";
 import SentenceBuilder from "../SentenceBuilder/SentenceBuilder";
+import Homepage from "../homepage/Homepage";
+import SidebarButton from "./SideBarButton";
+import SidebarButtonsHandler, { SidebarButtonInfo } from "./SideBarButtonsHandler";
+import "./Sidebar.css";
 
 function Sidebar() {
   const sidebarButtonsHandler = SidebarButtonsHandler.getInstance(); // Get the instance of SidebarButtonsHandler
@@ -15,15 +14,15 @@ function Sidebar() {
     const initialButtons: SidebarButtonInfo[] = [
       {
         id: "sidebar-button-test1",
-        bootstrapIcon_active: <FilePlayFill />,
-        bootstrapIcon_deactive: <FilePlay />,
+        bootstrapIcon_active: <HouseDoorFill />,
+        bootstrapIcon_deactive: <HouseDoorFill />,
         targetPage: <Homepage />,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       },
       {
         id: "sidebar-button-test2",
-        bootstrapIcon_active: <FilePlayFill />,
-        bootstrapIcon_deactive: <FilePlay />,
+        bootstrapIcon_active: <PencilSquare />,
+        bootstrapIcon_deactive: <PencilSquare />,
         targetPage: <SentenceBuilder />,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       }
