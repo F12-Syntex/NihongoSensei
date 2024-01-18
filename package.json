@@ -1,6 +1,6 @@
 {
   "name": "nohongo_sensei",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "main": "dist-electron/main/index.js",
   "description": "A japanese learning application",
   "author": "Syntex ( Saif khan ) eng.saifkhan2003@gmail.com",

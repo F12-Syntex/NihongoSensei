@@ -74,9 +74,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .nihongo-sensei-container > :first-child {
-  flex: 0 0 6%;
+  flex: 0 0 50px;
+  height: 100%; 
 }
 .nihongo-sensei-container > :last-child {
-  flex: 1;
+  flex: 2; 
+  height: 100%;
 }

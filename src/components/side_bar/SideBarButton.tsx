@@ -52,6 +52,13 @@ class SidebarButton extends Component<{
     //clone the sidebar and render it
     const sidebar = React.cloneElement(<Sidebar />, {});
     ReactDOM.render(sidebar, sidebarcontainer);
+
+    //clone the target page and render it
+    const targetPage = React.cloneElement(this.props.targetPage, {});
+    const bodycontainer = document.getElementsByClassName(
+      "nihongo-sensei-container-body"
+    )[0];
+    ReactDOM.render(targetPage, bodycontainer);
     
   };
 

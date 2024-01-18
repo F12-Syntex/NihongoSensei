@@ -13,7 +13,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <div className="nihongo-sensei-container-sidebar">
         <Sidebar />
       </div>
-      <Homepage />
+      <div className="nihongo-sensei-container-body">
+        <Homepage />
+      </div>
     </div>
   </React.StrictMode>
 );
