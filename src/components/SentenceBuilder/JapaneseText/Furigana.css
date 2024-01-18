@@ -11,13 +11,21 @@
   user-select: none;
   -webkit-user-select: none;
 
+  height: 1.5em;
+  width: auto;
+
   border-radius: 4px;
   color: white;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nihongo-sensei-furigana-kana-text{
-  font-size: 0.3em;
+  font-size: 0.5em;
   font-family: "Noto Sans Japanese", sans-serif;
   cursor: pointer;
   user-select: none;
@@ -26,8 +34,11 @@
   border-radius: 4px;
   color: white;
   text-align: center;
+
+  margin-bottom: -0.1em;
+  margin-left: 0.1em;
 }
 
 .nihongo-sensei-furigana-container:hover {
-  color: antiquewhite;
+  color: orange;
 }
