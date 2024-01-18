@@ -1,11 +1,10 @@
+import Furigana from "./JapaneseText/Furigana";
 import "./SentenceBuilder.css";
 
 function SentenceBuilder() {
   return (
     <div className="nihongo-sensei-sentence-builder-container">
-        <h1>
-            Sentence builder
-        </h1>
+        <Furigana text={"日"} />
     </div>
   );
 }
