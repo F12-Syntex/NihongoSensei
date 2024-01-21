@@ -1,7 +1,24 @@
 .nihongo-sensei-sentence-builder-container {
   width: 100%;
   height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nihongo-sensei-sentence-builder-content{
+  width: 100%;
+  height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 50px;
+}
+
+.nihongo-sensei-sentence-builder-metainformation{
+  width: 0%;
+  height: 100%;
 }

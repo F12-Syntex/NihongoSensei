@@ -4,7 +4,9 @@ import SentenceBuilder from "../SentenceBuilder/SentenceBuilder";
 import Homepage from "../homepage/Homepage";
 import SidebarButton from "./SideBarButton";
 import SidebarButtonsHandler, { SidebarButtonInfo } from "./SideBarButtonsHandler";
+import { IoBook } from "react-icons/io5";
 import "./Sidebar.css";
+import Browser from "../browser/Browser";
 
 function Sidebar() {
   const sidebarButtonsHandler = SidebarButtonsHandler.getInstance(); // Get the instance of SidebarButtonsHandler
@@ -13,20 +15,20 @@ function Sidebar() {
   useEffect(() => {
     const initialButtons: SidebarButtonInfo[] = [
       {
-        id: "sidebar-button-test1",
+        id: "sidebar-button-homepage",
         bootstrapIcon_active: <HouseDoorFill />,
         bootstrapIcon_deactive: <HouseDoorFill />,
         targetPage: <Homepage />,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       },
       {
-        id: "sidebar-button-test2",
+        id: "sidebar-button-sentence-builder",
         bootstrapIcon_active: <PencilSquare />,
         bootstrapIcon_deactive: <PencilSquare />,
         targetPage: <SentenceBuilder />,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       }
-    ];
+  ];
 
     sidebarButtonsHandler.clearButtons();
     initialButtons.forEach((button) => {
