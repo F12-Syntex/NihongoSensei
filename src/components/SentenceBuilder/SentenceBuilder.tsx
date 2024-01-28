@@ -44,7 +44,6 @@ function SentenceBuilder() {
         className="nihongo-sensei-sentence-builder-metainformation"
         id="sentence-builder"
       >
-        <p>Is Focused: {isFocused ? "Yes" : "No"}</p>
       </div>
     </div>
   );

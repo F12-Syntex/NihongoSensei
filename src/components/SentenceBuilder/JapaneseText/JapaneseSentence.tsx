@@ -30,22 +30,22 @@ const JapaneseSentence: React.FC<JapaneseSentenceProps> = (props) => {
       return;
     }
 
-    const ParentElement = document.getElementById(props.parent_id);
+    // const ParentElement = document.getElementById(props.parent_id);
 
-    if (ParentElement) {
-      ReactDOM.render(
-        <Browser
-          url={`https://www.deepl.com/translator#ja/en/${props.text}`}
-        />,
-        ParentElement
-      );
-      ParentElement.style.width = "50%";
-      ParentElement.style.height = "100%";
-    } else {
-      console.error(
-        `Parent element with id '${props.parent_id}' does not exist in the DOM.`
-      );
-    }
+    // if (ParentElement) {
+    //   ReactDOM.render(
+    //     <Browser
+    //       url={`https://www.deepl.com/translator#ja/en/${props.text}`}
+    //     />,
+    //     ParentElement
+    //   );
+    //   ParentElement.style.width = "50%";
+    //   ParentElement.style.height = "100%";
+    // } else {
+    //   console.error(
+    //     `Parent element with id '${props.parent_id}' does not exist in the DOM.`
+    //   );
+    // }
   };
 
   const handleUserInput = (event: any) => {

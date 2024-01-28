@@ -70,7 +70,7 @@ const Furigana: React.FC<FuriganaProps> = (props) => {
   if (kana) {
     readings = Array.from(kana.readings);
     readings[2] = readings[2].replace("n", "Noun").replace("adv", "Adverb");
-    // meanings = Array.from(kana.meanings);
+    meanings = Array.from(kana.meanings);
   }
 
   console.log(kana);
@@ -89,7 +89,7 @@ const Furigana: React.FC<FuriganaProps> = (props) => {
      {(isHovered || props.control_state) && (
       <div className="nihongo-sensei-furigana-kana-text">
         <div className="nihongo-sensei-furigana-kana-text">
-          {meanings.map((meanings: any, index: any) => (
+          {!props.control_state && meanings.map((meanings: any, index: any) => (
             <div key={index} id='nighongo-sensei-furigana-meaning-text'>{meanings}</div>
            ))}
           {readings[1]}
