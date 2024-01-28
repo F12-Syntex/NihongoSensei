@@ -42,3 +42,7 @@
 .nihongo-sensei-furigana-container:hover {
   color: orange;
 }
+
+#nighongo-sensei-furigana-meaning-text{
+  font-size: 10px;
+}

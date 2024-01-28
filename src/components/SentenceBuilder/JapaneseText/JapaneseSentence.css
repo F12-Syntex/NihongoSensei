@@ -1,13 +1,23 @@
 @font-face {
-  font-family: 'Noto Sans Japanese';
-  src: url('../../../assets/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+  font-family: "Noto Sans Japanese";
+  src: url("../../../assets/fonts/NotoSansJP-VariableFont_wght.ttf")
+    format("truetype");
   /* Add other font formats (eot, woff, woff2) for cross-browser compatibility */
 }
 
-.nihongo-sensei-japanese-sentence-container{
+.nihongo-sensei-japanese-sentence-container {
   width: auto;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 50px;
+}
+
+.nihongo-sensei-japanese-sentence-container-focused {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   margin-left: 50px;

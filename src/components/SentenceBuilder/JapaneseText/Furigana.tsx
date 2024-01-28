@@ -3,10 +3,12 @@ import './Furigana.css';
 import KanjiData from '@/kanji_data/KanjiData';
 import Browser from '@/components/browser/Browser';
 import ReactDOM from 'react-dom';
+import { backIn } from 'framer-motion';
 
 type FuriganaProps = {
   text: string;
   parent_id: string;
+  control_state: boolean;
 };
 
 const Furigana: React.FC<FuriganaProps> = (props) => {
@@ -21,6 +23,11 @@ const Furigana: React.FC<FuriganaProps> = (props) => {
   };
 
   const handleMouseDown = () => {
+
+    if(props.control_state){
+      return;
+    }
+
     const ParentElement = document.getElementById(props.parent_id);
   
     if (ParentElement) {
@@ -68,17 +75,22 @@ const Furigana: React.FC<FuriganaProps> = (props) => {
 
   console.log(kana);
 
+  const controlStateStyles = props.control_state
+    ? { color: 'orange' }
+    : {};
+
   return (
     <div className="nihongo-sensei-furigana-container"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
+      style={controlStateStyles}
     >
-     {isHovered && (
+     {(isHovered || props.control_state) && (
       <div className="nihongo-sensei-furigana-kana-text">
         <div className="nihongo-sensei-furigana-kana-text">
           {meanings.map((meanings: any, index: any) => (
-            <div key={index}>{meanings}</div>
+            <div key={index} id='nighongo-sensei-furigana-meaning-text'>{meanings}</div>
            ))}
           {readings[1]}
         </div>
