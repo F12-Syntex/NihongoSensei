@@ -42,8 +42,11 @@ class KanjiData {
   private static instance: KanjiData;
   private data: KanjiMetaData[];
 
+  private cache: Map<string, KanjiMetaData[]>;
+
   private constructor() {
     this.data = [];
+    this.cache = new Map<string, KanjiMetaData[]>();
   }
 
   public static getInstance(): KanjiData {
@@ -63,11 +66,18 @@ class KanjiData {
 
   public findKanjiByReading(reading: string): KanjiMetaData[] {
     const result: KanjiMetaData[] = [];
+
+    if (this.cache.has(reading)) {
+      return this.cache.get(reading) as KanjiMetaData[];
+    }
+    
     this.data.forEach((element: KanjiMetaData) => {
       if (element.readings.has(reading)) {
         result.push(element);
       }
     });
+
+    this.cache.set(reading, result);
     return result;
   }
   public async processAll(): Promise<void> {

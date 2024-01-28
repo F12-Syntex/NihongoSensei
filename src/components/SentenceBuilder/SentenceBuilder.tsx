@@ -3,7 +3,6 @@ import Furigana from "./JapaneseText/Furigana";
 import "./SentenceBuilder.css";
 import kuromoji from 'kuromoji';
 import axios from 'axios';
-import JishoAPI from 'unofficial-jisho-api';
 import JapaneseSentence from "./JapaneseText/JapaneseSentence";
 import { SentenceState } from './SentenceState';
 
