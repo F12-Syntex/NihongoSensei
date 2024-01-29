@@ -70,7 +70,7 @@ const Furigana: React.FC<FuriganaProps> = (props) => {
   if (kana) {
     readings = Array.from(kana.readings);
     readings[2] = readings[2].replace("n", "Noun").replace("adv", "Adverb");
-    meanings = Array.from(kana.meanings);
+    // meanings = Array.from(kana.meanings);
   }
 
   console.log(kana);
