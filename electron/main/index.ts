@@ -39,20 +39,29 @@ if (!app.requestSingleInstanceLock()) {
   process.exit(0);
 }
 
+//const apiKey = process.env.OPEN_AI_TOKEN;
+
+
 // Wherever you want to run the Node.js file jisho, use the following code
 const jishoProcess = spawn("node", ["electron/main/jisho.js"]);
+const gptapiProcess = spawn("node", ["electron/main/gptapi.js"]);
 
-jishoProcess.stdout.on("data", (data) => {
-  console.log(`stdout: ${data}`);
-});
+function startProcess(process: any) {
+  process.stdout.on("data", (data: any) => {
+    console.log(`stdout: ${data}`);
+  });
+  
+  process.stderr.on("data", (data: any) => {
+    console.error(`stderr: ${data}`);
+  });
+  
+  process.on("close", (code: any) => {
+    console.log(`child process exited with code ${code}`);
+  });
+}
 
-jishoProcess.stderr.on("data", (data) => {
-  console.error(`stderr: ${data}`);
-});
-
-jishoProcess.on("close", (code) => {
-  console.log(`child process exited with code ${code}`);
-});
+startProcess(jishoProcess);
+startProcess(gptapiProcess);
 
 // Remove electron security warnings
 // This warning only shows in development mode

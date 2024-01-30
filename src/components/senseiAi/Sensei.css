@@ -1,5 +1,98 @@
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  src: url('../../../assets/fonts/NotoSansJP-VariableFont_wght.ttf') format('truetype');
+}
+
 .nihongo-sensei-aibot-container {
+  width: auto;
+  height: calc(100vh - 20px);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.nihongo-sensei-aibot-chatbox-container{
   width: 100%;
   height: 100%;
-  background-color: orange;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  overflow-y: scroll;
 }
+
+.nihongo-sensei-aibot-message{
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+
+  font-family: "Noto Sans Japanese", sans-serif;
+  font: 1em 'Noto Sans Japanese', sans-serif;
+  color: white;
+}
+
+.nihongo-sensei-aibot-chatbox-user{
+  width: auto;
+
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  margin-bottom: 5px;
+  margin-right: 10px;
+
+  padding: 10px;
+
+  
+}
+
+.nihongo-sensei-aibot-chatbox-assistant{
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.05);
+  
+  margin-bottom: 5px;
+  margin-right: 10px;
+
+  padding: 10px;
+}
+
+.nihongo-sensei-aibot-text-wrapper{
+  width: 50%;
+  height: 50px;
+
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.nihongo-sensei-aibot-chatbox-container .nihongo-sensei-aibot-chatbox-user {
+  align-self: flex-end; 
+}
+
+.nihongo-sensei-aibot-chatbox-container .nihongo-sensei-aibot-chatbox-assistant {
+  align-self: flex-start;
+}
+
+.nihongo-sensei-aibot-input {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px; 
+
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid gray;
+  font: 20px 'Noto Sans JP', sans-serif;
+}
+
+
+.nihongo-sensei-aibot-input:focus{
+  outline: none;
+}
+
+
+

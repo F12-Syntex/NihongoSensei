@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FilePlay, FilePlayFill, HouseDoor, HouseDoorFill, Pencil, PencilFill, PencilSquare } from "react-bootstrap-icons";
+import { ChatLeft, ChatLeftDotsFill, ChatLeftFill, FilePlay, FilePlayFill, HouseDoor, HouseDoorFill, Pencil, PencilFill, PencilSquare } from "react-bootstrap-icons";
 import SentenceBuilder from "../SentenceBuilder/SentenceBuilder";
 import Homepage from "../homepage/Homepage";
 import SidebarButton from "./SideBarButton";
@@ -7,6 +7,7 @@ import SidebarButtonsHandler, { SidebarButtonInfo } from "./SideBarButtonsHandle
 import { IoBook } from "react-icons/io5";
 import "./Sidebar.css";
 import Browser from "../browser/Browser";
+import Sensei from "../senseiAi/Sensei";
 
 function Sidebar() {
   const sidebarButtonsHandler = SidebarButtonsHandler.getInstance(); // Get the instance of SidebarButtonsHandler
@@ -26,6 +27,13 @@ function Sidebar() {
         bootstrapIcon_active: <PencilSquare />,
         bootstrapIcon_deactive: <PencilSquare />,
         targetPage: <SentenceBuilder />,
+        activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
+      }, 
+      {
+        id: "sidebar-ai-chatbot",
+        bootstrapIcon_active: <ChatLeft />,
+        bootstrapIcon_deactive: <ChatLeft />,
+        targetPage: <Sensei />,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       }
   ];

@@ -102,7 +102,7 @@ const JapaneseSentence: React.FC<JapaneseSentenceProps> = (props) => {
             <Furigana
               text={word}
               parent_id={props.parent_id}
-              control_state={highlightState}
+              control_state={false}
             />
           ))}
       </div>

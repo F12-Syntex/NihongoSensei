@@ -35,8 +35,8 @@ app.get('/jisho', async (req, res) => {
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-  //call the jisho route
-  fetch('http://localhost:3001/jisho')
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  // //call the jisho route
+  // fetch('http://localhost:3001/jisho')
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data));
 });
