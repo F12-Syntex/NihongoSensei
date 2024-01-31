@@ -42,6 +42,7 @@ app.get("/query", async (req, res) => {
 
   const run = await openai.beta.threads.runs.create(threadid, {
     assistant_id: myAssistant.id
+    // model: "gpt-4-turbo-preview"
   });
 
 

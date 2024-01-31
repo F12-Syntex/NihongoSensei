@@ -42,48 +42,47 @@ function Sensei() {
       return;
     }
 
-    const dummyMessage: Message = {
-      content: 'dummy',
-      userType: 'assistant',
-    };
+    // const dummyMessage: Message = {
+    //   content: 'dummy',
+    //   userType: 'assistant',
+    // };
 
-    const newMessages: Message[] = [...messages, dummyMessage];
+    // const newMessages: Message[] = [...messages, dummyMessage];
 
     //for each message replace space with %20
-    for(let i = 0; i < newMessages.length; i++){
-      newMessages[i].content = newMessages[i].content.replaceAll('.', '\n');
-    }
+    // for(let i = 0; i < newMessages.length; i++){
+    //   newMessages[i].content = newMessages[i].content.replaceAll('.', '\n');
+    // }
 
-    setMessages([...newMessages]);
+    // setMessages([...newMessages]);
 
-    // console.log(lastMessage);
+    console.log(lastMessage);
 
-    // axios.get('http://localhost:3002/query', {
-    //   params: {
-    //     query: lastMessage.content
-    //   }
-    // })
-    //   .then((response) => {
+    axios.get('http://localhost:3002/query', {
+      params: {
+        query: lastMessage.content
+      }
+    })
+      .then((response) => {
 
-    //     const newMessages: Message[] = [];
+        const newMessages: Message[] = [];
 
-    //     console.log(response.data.data);
-    //     for(let i = 0; i < response.data.data.length; i++){
-    //         const message = {
-    //           content: response.data.data[i].content[0].text.value,
-    //           userType: response.data.data[i].role,
-    //         };
-    //         newMessages.push(message);
-    //       }
+        console.log(response.data.data);
+        for(let i = 0; i < response.data.data.length; i++){
+            const message = {
+              content: response.data.data[i].content[0].text.value,
+              userType: response.data.data[i].role,
+            };
+            newMessages.push(message);
+          }
         
-    //     //reverse the array so that the messages are in the correct order
-    //     newMessages.reverse();
-        
-    //     setMessages([...newMessages]);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+        //reverse the array so that the messages are in the correct order
+        newMessages.reverse();
+        setMessages([...newMessages]);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
 }, [messages]);
 
@@ -94,7 +93,7 @@ return (
     <div className='nihongo-sensei-aibot-chatbox-container'>
         {messages.map((message, index) => (
           <div key={index} className={`nihongo-sensei-aibot-chatbox-${message.userType}`}>
-            <span className='nihongo-sensei-aibot-message' style={{ whiteSpace: 'pre-line' }}>{message.content}</span>
+            <span className='npmnihongo-sensei-aibot-message' style={{ whiteSpace: 'pre-line' }}>{message.content}</span>
           </div>
         ))}
     </div>
