@@ -4,10 +4,11 @@ import SentenceBuilder from "../SentenceBuilder/SentenceBuilder";
 import Homepage from "../homepage/Homepage";
 import SidebarButton from "./SideBarButton";
 import SidebarButtonsHandler, { SidebarButtonInfo } from "./SideBarButtonsHandler";
-import { IoBook } from "react-icons/io5";
+import { IoBook, IoSettings } from "react-icons/io5";
 import "./Sidebar.css";
 import Browser from "../browser/Browser";
 import Sensei from "../senseiAi/Sensei";
+import Settings from "../settings/Settings";
 
 function Sidebar() {
   const sidebarButtonsHandler = SidebarButtonsHandler.getInstance(); // Get the instance of SidebarButtonsHandler
@@ -34,6 +35,13 @@ function Sidebar() {
         bootstrapIcon_active: <ChatLeft />,
         bootstrapIcon_deactive: <ChatLeft />,
         targetPage: <Sensei />,
+        activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
+      },
+      {
+        id: "sidebar-button-settings",
+        bootstrapIcon_active: <IoSettings />,
+        bootstrapIcon_deactive: <IoSettings />,
+        targetPage: <Settings/>,
         activeButtonId: sidebarButtonsHandler.getActiveButtonId(),
       }
   ];
